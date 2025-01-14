@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulation.Api", "ImageManipulation.Api\ImageManipulation.Api.csproj", "{5748E1E2-DE43-4867-AE5D-9D46A553288E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulation.Data", "ImageManipulation.Data\ImageManipulation.Data.csproj", "{F2F83713-1C5D-4D9C-A6ED-73B733C68193}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5748E1E2-DE43-4867-AE5D-9D46A553288E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5748E1E2-DE43-4867-AE5D-9D46A553288E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5748E1E2-DE43-4867-AE5D-9D46A553288E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5748E1E2-DE43-4867-AE5D-9D46A553288E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F83713-1C5D-4D9C-A6ED-73B733C68193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F83713-1C5D-4D9C-A6ED-73B733C68193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F83713-1C5D-4D9C-A6ED-73B733C68193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F83713-1C5D-4D9C-A6ED-73B733C68193}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C5C9C83-4583-4A7A-B15F-8E110BDDBF06}
+	EndGlobalSection
+EndGlobal
