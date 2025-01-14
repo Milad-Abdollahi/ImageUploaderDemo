@@ -63,13 +63,13 @@ public class ProductController(IProductRepository productRepository, ILogger<Pro
         }
     }
 
-    [HttpGet]
-    //[Authorize]
-    public async Task<IActionResult> GetProducts()
-    {
-        IEnumerable<Product> product = await productRepository.GetProductsAsync();
-        return Ok(product);
-    }
+    //[HttpGet]
+    ////[Authorize]
+    //public async Task<IActionResult> GetProducts()
+    //{
+    //    IEnumerable<Product> product = await productRepository.GetProductsAsync();
+    //    return Ok(product);
+    //}
 
     [HttpGet("my-Products")]
     [Authorize]
