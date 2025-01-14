@@ -37,4 +37,9 @@ public class ProductRepository(ApplicationDbContext context) : IProductRepositor
         List<Product> products = await context.Products.ToListAsync();
         return products;
     }
+
+    public async Task<IEnumerable<Product>> GetProductsByUserIdAsync(int userId)
+    {
+        return await context.Products.Where(p => p.CreatorUserId == userId).ToListAsync();
+    }
 }

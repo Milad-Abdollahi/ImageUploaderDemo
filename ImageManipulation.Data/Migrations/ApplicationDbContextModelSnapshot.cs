@@ -29,10 +29,12 @@ namespace ImageManipulation.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ProductImage")
+                    b.Property<int>("CreatorUserId")
+                        .HasColumnType("int");
+
+                    b.Property<byte[]>("ProductImageData")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
@@ -41,7 +43,43 @@ namespace ImageManipulation.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatorUserId");
+
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("ImageManipulation.Data.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ImageManipulation.Data.Models.Product", b =>
+                {
+                    b.HasOne("ImageManipulation.Data.Models.User", "CreatorUser")
+                        .WithMany()
+                        .HasForeignKey("CreatorUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CreatorUser");
                 });
 #pragma warning restore 612, 618
         }

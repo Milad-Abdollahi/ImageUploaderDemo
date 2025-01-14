@@ -15,6 +15,11 @@ public class Product
 
 
     [Required]
-    [MaxLength(50)]
-    public string? ProductImage { get; set; }
+    public byte[]? ProductImageData { get; set; }
+
+    [Required]
+    public int CreatorUserId { get; set; }
+
+    [ForeignKey(nameof(CreatorUserId))]
+    public User? CreatorUser { get; set; }
 }
